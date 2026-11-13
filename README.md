@@ -1,8 +1,8 @@
-# ShortsAI v2 — Multi-Agent YouTube Shorts Studio
+# ShortsAI — Multi-Agent YouTube Shorts Studio
 
 A portfolio-grade, agentic video-generation pipeline: topic → research → script → quality review → voice → visuals → Whisper captions → FFmpeg render.
 
-## What's new in v2
+## What's in this
 - **LangGraph orchestration** with explicit research, writing, quality-control, voice, visual, transcription and rendering nodes.
 - **Quality-control agent** checks factual grounding, hook, pacing and duration; requests one script revision when needed.
 - **Whisper transcription** generates timestamped word/segment captions aligned to the generated narration.
