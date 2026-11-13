@@ -1,0 +1,22 @@
+services:
+  api:
+    build: ./backend
+    env_file:
+      - ./backend/.env
+    environment:
+      STORAGE_DIR: /app/storage
+      DATABASE_PATH: /app/storage/shortsai.sqlite3
+      MUSIC_FILE: /app/assets/background_music.mp3
+    volumes:
+      - ./backend/storage:/app/storage
+      - ./backend/assets:/app/assets:ro
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+  frontend:
+    build: ./frontend
+    depends_on:
+      - api
+    ports:
+      - "5173:80"
+    restart: unless-stopped
